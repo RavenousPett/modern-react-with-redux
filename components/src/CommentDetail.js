@@ -1,6 +1,7 @@
 import React from 'react';
+import faker from 'faker';
 
-const CommentDetail = () => {
+const CommentDetail = props => {
     return (
         <div className="comment">
 
@@ -10,7 +11,7 @@ const CommentDetail = () => {
 
             <div className="content">
                 <a href="/" className="author">
-                    Sam
+                    {props.author}
                 </a>
 
                 <div className="metadata">
@@ -23,3 +24,5 @@ const CommentDetail = () => {
         </div>
     );
 };
+
+export default CommentDetail;
