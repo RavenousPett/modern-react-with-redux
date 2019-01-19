@@ -9,6 +9,12 @@
       "title": "Another stream",
       "description": "Heres some stream",
       "id": 2
+    },
+    {
+      "title": "Splendor",
+      "description": "Watch me play Splendor",
+      "userId": "104226954209625640593",
+      "id": 3
     }
   ]
 }
