@@ -1,5 +1,6 @@
 import React from "react";
 import Accordion from "./components/Accordion";
+import Counter from "./components/Counter";
 
 const items = [
   { title: 'What is React', content: 'React is a javascript framework'},
@@ -10,6 +11,7 @@ const items = [
 export default () => {
  return (
    <div>
+     <Counter />
      <Accordion items={items} />
    </div>
  );
