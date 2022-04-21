@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Search = () => {
   const [term, setTerm] = useState('');
 
-  console.log('I RUN WITH EVERY RENDER');
-
   useEffect(() => {
-    console.log('I ONLY RUN ONCE')
-  }, []);
+    const search = async () => {
+      await axios.get('dfsfsf');
+    };
+
+    search();
+
+    // above is the same as
+    // (async () => { await axios.get('dfsfsf')})();
+  }, [term]);
 
   return (
     <div>
