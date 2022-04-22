@@ -20,10 +20,18 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    search();
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        search();
+      }
+    }, 500);
 
     // above is the same as
     // (async () => { await axios.get('dfsfsf')})();
+
+    return () => {
+      clearTimeout(timeoutId);
+    }
   }, [term]);
 
   const renderedResults = results.map((result) => {
