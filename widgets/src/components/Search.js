@@ -20,17 +20,22 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        search();
+    // If first time rendering component
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 500);
+
+      // above is the same as
+      // (async () => { await axios.get('dfsfsf')})();
+
+      return () => {
+        clearTimeout(timeoutId);
       }
-    }, 500);
-
-    // above is the same as
-    // (async () => { await axios.get('dfsfsf')})();
-
-    return () => {
-      clearTimeout(timeoutId);
     }
   }, [term]);
 
